@@ -2,6 +2,9 @@ package com.yaoyao.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -57,6 +60,23 @@ public class ArticleServlet extends HttpServlet {
 			}
 			out.print(std.toString());
 			
+		}if("add".equals(method)){
+			String article_name = request.getParameter("article_name");
+			String article_type_id = request.getParameter("article_type_id");
+			String article_content = request.getParameter("article_content");
+			
+			long article_time = System.currentTimeMillis();
+			article_time = article_time / 1000;
+			
+			System.out.println(article_content);
+			String sql = "INSERT INTO `dami_article` (`article_title`,`article_type_id`,`article_content`,`article_time`) VALUES (?,?,?,?)";
+			Object[] params = {article_name,article_type_id,article_content,article_time};
+			int res = db.update(sql, params);
+			StdModel std = new StdModel();
+			if(res == 0){
+				std.setCode(400);
+			}
+			out.println(std.toString());
 		}
 		
 	}

@@ -73,6 +73,13 @@ public class ArticleTypeServlet extends HttpServlet {
 				std.setCode(400);
 			}
 			out.println(std.toString());
+		}if("listAll".equals(method)){
+			String sql = "SELECT * FROM `dami_article_type`";
+		    Object[] params = {};
+			List<Map<String,Object>> articleTypeList = db.query(sql, params);
+			StdModel std = new StdModel(articleTypeList);
+		    out.print(std.toString());
+
 		}
 	}
 

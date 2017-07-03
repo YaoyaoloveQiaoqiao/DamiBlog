@@ -60,7 +60,7 @@
 				<h1 class="page-header">文章管理</h1>
 				<div class="card">
 					<button type="button" class="btn btn-success" data-toggle="modal"
-						data-target="#myModal">添加</button>
+						data-target="#myModal" onclick="listArticleType();">添加</button>
 
 					<div class="card-content table-responsive">
 						<table class="table" style="table-layout: fixed">
@@ -110,11 +110,10 @@
 					<div class="form-group">
 						<label for="name">文章标题</label> <input type="text"
 							id="article_name" class="form-control" id="name"
-							placeholder="请输入文章类型名称"> <label for="name">文章类型</label> <select
-							class="form-control">
-							<option>1</option>
-							<option>2</option>
-						</select> <label for="content">文章内容</label>
+							placeholder="请输入文章类型名称"> <label for="name">文章类型</label> 
+						<select class="form-control" id="select">
+						</select> 
+						<label for="content">文章内容</label>
 						<div id="editor">
 							<p>请写出你的心声～～</p>
 						</div>
@@ -231,15 +230,15 @@
 	<script type="text/javascript">
     function addArticle(){
     	var name = $('#article_name').val();
-    	var content = $('#editor').val();
-    	var articleType = $('#type:radio:checked');
-    	alert(articleType);
+    	var content = editor.txt.html();
+    	var articleType = $('#select').val();
     	$.ajax({
-    		url:"<%=request.getContextPath()%>
-		/ArticleServlet?m=add",
+    		url:"<%=request.getContextPath()%>/ArticleServlet?m=add",
 				dataType : "json",
 				data : {
-					article_name : name
+					article_name : name,
+					article_type_id:articleType,
+					article_content:content
 				},
 				type : "POST",
 				success : function(data) {
@@ -257,7 +256,33 @@
 			listArticle();
 		}
 	</script>
-
+	<script type="text/javascript">
+    function listArticleType(){
+    	$.ajax({
+    		url:"<%=request.getContextPath()%>/ArticleTypeServlet?m=listAll",
+				dataType : "json",
+				data : {
+				},
+				type : "POST",
+				success : function(data) {
+					console.log(data);
+					console.log(data.code)
+					if (data.code == 400) {
+						console.log("fail");
+					}
+					if (data.code == 200) {
+						var model = data.model;
+						for(var i=0;i<model.length;i++){
+							$('#select').empty;
+							$('#select').append("<option value=\"" +model[i].article_type_id+ "\">"+model[i].article_type_name+"</option>");
+						}
+					}
+					
+				}
+			});
+			listArticle();
+		}
+	</script>
 
 </body>
 </html>
