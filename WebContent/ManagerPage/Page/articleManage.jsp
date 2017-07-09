@@ -111,13 +111,11 @@
 						<label for="name">文章标题</label> <input type="text"
 							id="article_name" class="form-control" id="name"
 							placeholder="请输入文章类型名称"> <label for="name">文章类型</label> 
-						<select class="form-control" id="select">
-						</select> 
+						<select class="form-control" id="select"></select> 
 						<label for="content">文章内容</label>
 						<div id="editor">
 							<p>请写出你的心声～～</p>
 						</div>
-
 					</div>
 				</div>
 				<div class="modal-footer">

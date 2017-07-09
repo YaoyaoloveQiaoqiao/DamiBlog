@@ -3,7 +3,7 @@
 <ul class="nav nav-sidebar">
 	<li class="active"><a href="<%=request.getContextPath() %>/ManagerPage/Page/index.jsp">Overview <span class="sr-only">(current)</span></a></li>
 	<li><a href="<%=request.getContextPath() %>/ManagerPage/Page/articleManage.jsp">Reports</a></li>
-	<li><a href="#">Analytics</a></li>
+	<li><a href="<%=request.getContextPath() %>/ManagerPage/Page/cockpitNew.jsp">Analytics</a></li>
 	<li><a href="#">Export</a></li>
 	<li><a href="#">Export</a></li>
 </ul>

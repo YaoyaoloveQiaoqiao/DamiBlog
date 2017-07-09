@@ -1,0 +1,101 @@
+.text-danger {
+  background-color: #d9534f;
+}
+
+.text-warning {
+  background-color: #f0ad4e;
+}
+
+.text-success {
+  background-color: #5cb85c;
+} 
+
+table tr th {
+	font-size: 9px;
+}
+
+.navbar-inverse {
+  background-color: #428bca;
+  border-color: #080808;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-inverse .navbar-text {
+  color: #9d9d9d;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #cadef0;
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #42a7dd;
+}
+.navbar-inverse .navbar-nav > .disabled > a,
+.navbar-inverse .navbar-nav > .disabled > a:hover,
+.navbar-inverse .navbar-nav > .disabled > a:focus {
+  color: #444;
+  background-color: transparent;
+}
+.navbar-inverse .navbar-toggle {
+  border-color: #333;
+}
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: #333;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+  border-color: #101010;
+  font-size: 15px;
+}
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  color: #fff;
+  background-color: #2b6599;
+}
+
+.navbar-inverse .navbar-text {
+  color: #cadef0;
+}
+
+.navbar-inverse .navbar-link {
+  color: #cadef0;
+}
+
+.navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 5px 30px;
+  font-size: 18px;
+  line-height: 20px;
+}
+.tree{
+	font-size:17px;
+}
+
+.angle > i{
+    padding-bottom: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 6px;
+    font-size:17px;
+    cursor:pointer;
+}
